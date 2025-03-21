@@ -121,6 +121,9 @@ p {
 
 .hero-image {
   flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Ensure the image is centered */
 }
 
 /* Feature Cards */
@@ -340,4 +343,4 @@ p {
   .copyright {
     text-align: center;
   }
-} 
+}
