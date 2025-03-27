@@ -1,4 +1,4 @@
-/* CSS Reset and Global Styles */
+/* CSS Reset and universal Styles */
 :root {
   /* Primary Colors */
   --color-pink: hsl(322, 100%, 66%);
@@ -26,6 +26,13 @@ body {
   line-height: 1.6;
 }
 
+.Main-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -41,15 +48,10 @@ p {
   margin-bottom: 1.5rem;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
 
-/* Buttons */
-.btn {
+
+/* Buttons Stylings */
+ .cta-btn,.Trial-btn {
   font-family: var(--font-body);
   font-weight: 700;
   border: none;
@@ -58,19 +60,19 @@ p {
   transition: all 0.3s ease;
 }
 
-.btn-primary {
+.Trial-btn {
   background-color: var(--color-pink);
   color: white;
   padding: 1rem 3rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary:hover {
+.Trial-btn:hover {
   opacity: 0.9;
   transform: translateY(-3px);
 }
 
-.btn-secondary {
+.cta-btn {
   background-color: white;
   color: var(--color-very-dark-cyan);
   padding: 0.5rem 2rem;
@@ -78,60 +80,60 @@ p {
   font-weight: 400;
 }
 
-.btn-secondary:hover {
+.cta-btn:hover {
   color: var(--color-grayish-blue);
 }
 
-/* Header and Navigation */
-.header {
+/* Header and Navigation styling */
+.Header {
   background-color: var(--color-very-pale-cyan);
   background-image: url('../project-assets/images/bg-hero-desktop.svg');
   background-size: cover;
   padding: 2.5rem 0;
 }
 
-.nav {
+.Nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
 }
 
-.logo {
+.Huddle logo {
   width: 180px;
 }
 
 /* Hero Section */
-.hero {
+.Hero-section {
   display: flex;
   align-items: center;
   gap: 3rem;
   padding-bottom: 4rem;
 }
 
-.hero-content {
+.Hero-content {
   flex: 1;
 }
 
-.hero-content h1 {
+.Hero-content h1 {
   font-size: 2.5rem;
   line-height: 1.4;
   margin-bottom: 1.5rem;
 }
 
-.hero-image {
+.Hero-image {
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center; /* Ensure the image is centered */
+  align-items: center; /* This is to Ensure the image is centered */
 }
 
-/* Feature Cards */
-.features {
+/* Section Cards */
+.sections {
   padding: 5rem 0;
 }
 
-.feature-card {
+.section-card {
   display: flex;
   align-items: center;
   gap: 5rem;
@@ -141,31 +143,31 @@ p {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 
-.feature-card.reverse {
+.section-card.reverse {
   flex-direction: row-reverse;
 }
 
-.feature-content {
+.section-content {
   flex: 1;
 }
 
-.feature-image {
+.section-image {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.feature-content h2 {
+.section-content h2 {
   color: var(--color-very-dark-cyan);
   margin-bottom: 1rem;
 }
 
-.feature-content p {
+.section-content p {
   color: var(--color-grayish-blue);
 }
 
-/* CTA Section */
-.cta-card {
+/* ready to build Section */
+.build-container {
   text-align: center;
   padding: 3rem;
   margin: 0 auto;
@@ -178,11 +180,11 @@ p {
   z-index: 2;
 }
 
-.cta-card h2 {
+.build-container h2 {
   margin-bottom: 2rem;
 }
 
-/* Footer */
+/* Footer styling*/
 .footer {
   background-color: var(--color-very-dark-cyan);
   color: white;
@@ -243,13 +245,13 @@ p {
   color: var(--color-pink);
 }
 
-.footer-social {
+.social-icons {
   flex: 1;
   display: flex;
   gap: 1rem;
 }
 
-.footer-social a {
+.social-icons a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,7 +264,7 @@ p {
   transition: all 0.3s ease;
 }
 
-.footer-social a:hover {
+.social-icons a:hover {
   color: var(--color-pink);
   border-color: var(--color-pink);
 }
@@ -276,9 +278,9 @@ p {
   margin-bottom: 0;
 }
 
-/* Media Queries */
+/* Media Queries for Responsive Design */
 @media screen and (max-width: 1024px) {
-  .container {
+  .Main-container {
     max-width: 900px;
   }
 }
@@ -288,16 +290,16 @@ p {
     font-size: 16px;
   }
   
-  .hero {
+  .Hero-section {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-content h1 {
+  .Hero-content h1 {
     font-size: 1.8rem;
   }
 
-  .header {
+  .Header {
     background-image: url('../project-assets/images/bg-hero-mobile.svg');
   }
 
@@ -305,24 +307,24 @@ p {
     width: 120px;
   }
   
-  .btn-secondary {
+  .Trial-btn {
     padding: 0.4rem 1.5rem;
     font-size: 0.8rem;
   }
   
-  .btn-primary {
+  .cta-btn {
     padding: 0.8rem 2.5rem;
   }
   
-  .feature-card, 
-  .feature-card.reverse {
+  .section-card, 
+  .section-card.reverse {
     flex-direction: column-reverse;
     text-align: center;
     padding: 2rem 1.5rem;
     gap: 2rem;
   }
   
-  .feature-image {
+  .section-image {
     margin-bottom: 1rem;
   }
   
@@ -336,7 +338,7 @@ p {
     gap: 1rem;
   }
   
-  .footer-social {
+  .social-icons {
     justify-content: center;
   }
   
